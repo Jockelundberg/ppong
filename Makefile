@@ -16,4 +16,4 @@ $(EXECUTABLE): main.c $(OBJECTS)
 	$(CC) $(CFLAGS) $< -o $@
 	
 clean:
-	rm --silent $(EXECUTABLE) $(OBJECTS)
+	rm  $(EXECUTABLE) $(OBJECTS)
