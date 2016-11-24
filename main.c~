@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <ncurses.h>
+
+void init_curses (void);
+void end_curses (void);
+
+int
+main ()
+{
+  init_curses ();
+  for (;;);
+  end_curses ();
+}
+
+void
+init_curses ()
+{
+  initscr ();
+  cbreak ();
+  noecho ();
+  nodelay (stdscr, TRUE);
+  scrollok (stdscr, FALSE);
+  curs_set (0);
+}
+
+void
+end_curses ()
+{
+  flushinp ();
+  erase ();
+  refresh ();
+  endwin ();
+}
